@@ -32,5 +32,11 @@ RSpec.describe TextStorage::Controller do
       text_array = target.read
       expect(text_array).to eq ['abc']
     end
+    example 'truncate' do
+      target.append('abc')
+      target.truncate
+      res = target.read
+      expect(res).to eq []
+    end
   end
 end
