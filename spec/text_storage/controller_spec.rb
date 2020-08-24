@@ -8,20 +8,29 @@ RSpec.describe TextStorage::Controller do
 
   let(:target) { TextStorage::Controller.new }
 
+  context '初期化' do
+    example '' do
+      file_path = target.instance_variable_get(:@file_path)
+      expect(file_path).to eq @file_path
+    end
+  end
   context '書き込み' do
     example 'append' do
       target.append('abc')
-      file_path = target.instance_variable_get(:@file_path)
-      expect(file_path).to eq @file_path
-      expect(File.open(file_path, 'r').read).to eq "abc\n"
+      expect(File.open(@file_path, 'r').read).to eq "abc\n"
     end
     example 'append_uniq' do
       target.append('abc')
       target.append_uniq('abc')
-      file_path = target.instance_variable_get(:@file_path)
-      expect(file_path).to eq @file_path
-      expect(File.open(file_path, 'r').read).to eq "abc\n"
+      expect(File.open(@file_path, 'r').read).to eq "abc\n"
     end
   end
 
+  context '読み込み' do
+    example 'read' do
+      target.append('abc')
+      text_array = target.read
+      expect(text_array).to eq ['abc']
+    end
+  end
 end

@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    text_storage (0.1.1)
+    text_storage (0.1.2)
 
 GEM
   remote: https://rubygems.org/
