@@ -15,6 +15,13 @@ RSpec.describe TextStorage::Controller do
       expect(file_path).to eq @file_path
       expect(File.open(file_path, 'r').read).to eq "abc\n"
     end
+    example 'append_uniq' do
+      target.append('abc')
+      target.append_uniq('abc')
+      file_path = target.instance_variable_get(:@file_path)
+      expect(file_path).to eq @file_path
+      expect(File.open(file_path, 'r').read).to eq "abc\n"
+    end
   end
 
 end
