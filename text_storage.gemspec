@@ -6,8 +6,8 @@ Gem::Specification.new do |spec|
   spec.authors       = ["delightech"]
   spec.email         = ["hisafumi.kikkawa@gmail.com"]
 
-  spec.summary       = %q{This is simple text strage. Just write text to local file.}
-  spec.description   = %q{This is simple text strage. Just write text to local file.}
+  spec.summary       = %q{This is simple text storage.}
+  spec.description   = %q{This is simple text storage. Just write text to local file.}
   spec.homepage      = "https://github.com/delightech/text_storage"
   spec.license       = "MIT"
   spec.required_ruby_version = Gem::Requirement.new(">= 2.3.0")
