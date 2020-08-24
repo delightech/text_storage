@@ -16,6 +16,10 @@ jobs:
       with:
         ruby-version: 2.6.x
 
+    - name: Add github configs
+      run: |
+        git config --global user.name "delightech"
+        git config --global user.email "hisafumi.kikkawa@gmail.com"
     - name: Build and test with Rake
       run: |
         gem install bundler
